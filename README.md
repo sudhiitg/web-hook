@@ -30,4 +30,31 @@ This project captures GitHub webhook events (like pushes, pull requests, and mer
 
 ```bash
 git clone https://github.com/sudhiitg/web-hook.git
-cd web-hook
+
+### 2 Install Dependencies 
+```bash
+pip install -r requirements.txt
+
+### 3 Run Backend  
+```bash
+cd backend
+python app.py
+### 2 Install Frontend Dependencies 
+```bash
+npm create vite@latest
+
+### 3 Run Frontend  
+```bash
+cd client
+npm install
+npm run dev
+
+### Web Hook setup on Github
+-Go to your GitHub repository → Settings > Webhooks
+-Click "Add webhook"
+-Use your ngrok URL + /webhook (e.g., https://abc123.ngrok.io/webhook)
+-Set content type to application/json
+-Select events: push, pull request
+-Save webhook
+
+
