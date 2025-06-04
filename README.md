@@ -39,9 +39,6 @@ pip install -r requirements.txt
 
 cd backend
 python app.py
-### 4 Install Frontend Dependencies 
-
-npm create vite@latest
 
 ### 5 Run Frontend  
 
@@ -57,7 +54,7 @@ then in shell: run ./ngrok http 5000
 ### 7 Web Hook setup on Github
 -Go to your GitHub repository → Settings > Webhooks
 -Click "Add webhook"
--Use your ngrok URL + /webhook (e.g., https://abc123.ngrok.io/webhook)
+-Use your ngrok URL + /github (e.g., [https://abc123.ngrok.io](https://5c1c-2406-7400-61-3200-8409-b4ab-9045-bdc1.ngrok-free.app/github)
 -Set content type to application/json
 -Select events: push, pull request
 -Save webhook
