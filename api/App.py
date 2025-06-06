@@ -42,16 +42,32 @@ def handle_webhook():
             "timestamp": data['commits'][0]['timestamp']
          }
         elif event_type == 'pull_request':
+         action = data.get('action')
          pr = data['pull_request']
+
+        if action == 'closed' and pr.get('merged'):
+            entry = {
+                "type": "merge",
+                "author": pr['user']['login'],
+                "from_branch": pr['head']['ref'],
+                "to_branch": pr['base']['ref'],
+                "timestamp": pr['merged_at']
+            }
+        elif event_type == 'pull_request':
+         action = data.get('action')
+         pr = data['pull_request']
+        if action == 'opened':
          entry = {
-            "type": "merge" if pr.get('merged', False) and data['action'] == 'closed' else "pull_request",
+            "type":"pull_request",
             "author": pr['user']['login'],
             "from_branch": pr['head']['ref'],
             "to_branch": pr['base']['ref'],
             "timestamp": pr['updated_at']
              }
+        
         else:
          return jsonify({"msg": "Unhandled event"}), 200
+        
         collection.insert_one(entry)
         return jsonify({"msg": "Event stored"}), 201
         #  print("Entry to be saved:", entry)
