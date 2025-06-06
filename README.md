@@ -59,6 +59,7 @@ then in shell run : ./ngrok http 5000
 -Select events: push, pull request
 -Save webhook
 Attached Image of UI
-![image](https://github.com/user-attachments/assets/2bc1b8e0-4616-4bc3-a5cb-009337151a84)
+![Dashboard Screenshot](assets/dashboard.png)
+
 
 
