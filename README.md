@@ -58,8 +58,8 @@ then in shell run : ./ngrok http 5000
 -Set content type to application/json
 -Select events: push, pull request
 -Save webhook
-Attached Image of UI
-![Dashboard Screenshot](assets/dashboard.png)
+Let me know if you face any problems related to installation 
+email : sudhiitg@gmail.com
 
 
 
