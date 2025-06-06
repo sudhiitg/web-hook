@@ -45,7 +45,7 @@ def handle_webhook():
          action = data.get('action')
          pr = data['pull_request']
 
-        if action == 'closed' and pr.get('merged'):
+         if action == 'closed' and pr.get('merged'):
             entry = {
                 "type": "merge",
                 "author": pr['user']['login'],
@@ -56,8 +56,8 @@ def handle_webhook():
         elif event_type == 'pull_request':
          action = data.get('action')
          pr = data['pull_request']
-        if action == 'opened':
-         entry = {
+         if action == 'opened':
+          entry = {
             "type":"pull_request",
             "author": pr['user']['login'],
             "from_branch": pr['head']['ref'],
